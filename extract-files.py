@@ -10,12 +10,13 @@ from extract_utils.main import (
 )
 
 namespace_imports = [
-    'device/qualcomm/qssi_64',
+    'device/nothing/asteroids',
+    'vendor/nothing/asteroids',
 ]
 
 module = ExtractUtilsModule(
-    'qssi_64',
-    'qualcomm',
+    'asteroids',
+    'nothing',
     namespace_imports=namespace_imports,
 )
 

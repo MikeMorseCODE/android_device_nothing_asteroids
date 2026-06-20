@@ -1,3 +1,5 @@
+TARGET_BOARD_PLATFORM := volcano
+
 #
 # SPDX-FileCopyrightText: The Paranoid Android Project
 # SPDX-License-Identifier: Apache-2.0
@@ -36,7 +38,7 @@ PRODUCT_PACKAGES += \
     otapreopt_script
 
 # API levels
-PRODUCT_SHIPPING_API_LEVEL := 35
+PRODUCT_SHIPPING_API_LEVEL := 33
 
 # Audio
 PRODUCT_PACKAGES += \

@@ -1,25 +1,34 @@
+# Copyright (C) 2024 Paranoid Android
 #
-# SPDX-FileCopyrightText: The Paranoid Android Project
-# SPDX-License-Identifier: Apache-2.0
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
 #
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+ifeq (aospa_asteroids,$(TARGET_PRODUCT))
 
-# Device
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+
 $(call inherit-product, device/nothing/asteroids/device.mk)
 
-# AOSPA
-$(call inherit-product, vendor/aospa/config/aospa.mk)
+$(call inherit-product, vendor/aospa/target/product/aospa-target.mk)
 
-PRODUCT_DEVICE := asteroids
-PRODUCT_NAME := aospa_asteroids
 PRODUCT_BRAND := nothing
-PRODUCT_MODEL := A059P
+PRODUCT_DEVICE := asteroids
 PRODUCT_MANUFACTURER := Nothing
+PRODUCT_MODEL := A059P
+PRODUCT_NAME := aospa_asteroids
 
 PRODUCT_GMS_CLIENTID_BASE := android-nothing
 
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="asteroids-user 15 AP3A.241005.015 2604141749 release-keys" \
-    BuildFingerprint=nothing/asteroids/asteroids:15/AP3A.241005.015/2604141749:user/release-keys
+TARGET_BOOT_ANIMATION_RES := 1080
+
+endif
