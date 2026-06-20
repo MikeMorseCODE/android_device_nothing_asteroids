@@ -233,3 +233,17 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/nothing/asteroids/asteroids-vendor.mk)
+
+# Init RC files and fstab
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/fstab.default:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.default \
+    $(LOCAL_PATH)/rootdir/etc/fstab.default:$(TARGET_COPY_OUT_RAMDISK)/fstab.default \
+    $(LOCAL_PATH)/rootdir/etc/init.qcom.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.qcom.rc \
+    $(LOCAL_PATH)/rootdir/etc/init.qcom.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.qcom.usb.rc \
+    $(LOCAL_PATH)/rootdir/etc/init.qcom.factory.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.qcom.factory.rc \
+    $(LOCAL_PATH)/rootdir/etc/init.qti.kernel.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.qti.kernel.rc \
+    $(LOCAL_PATH)/rootdir/etc/init.qti.ufs.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.qti.ufs.rc \
+    $(LOCAL_PATH)/rootdir/etc/init.target.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.target.rc \
+    $(LOCAL_PATH)/rootdir/etc/init.nt_product.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.nt_product.rc \
+    $(LOCAL_PATH)/rootdir/etc/init.stnfc.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.stnfc.rc \
+    $(LOCAL_PATH)/rootdir/etc/stnfc_nt.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/stnfc_nt.rc
